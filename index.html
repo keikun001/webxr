@@ -42,12 +42,13 @@ function checkXR() {
 }
 function checkSupportedState() {
   navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
-    if (supported) {
-      xrButton.innerHTML = 'Enter AR';
-      xrButton.addEventListener('click', onButtonClicked);
-    } else {
-      xrButton.innerHTML = 'AR not found';
-    }
+    xrButton.innerHTML = navigator.xr.isSessionSupported
+//     if (supported) {
+//       xrButton.innerHTML = 'Enter AR';
+//       xrButton.addEventListener('click', onButtonClicked);
+//     } else {
+//       xrButton.innerHTML = 'AR not found';
+//     }
     xrButton.disabled = !supported;
   });
 }
